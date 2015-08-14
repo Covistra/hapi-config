@@ -9,6 +9,10 @@ server.register({register: require('./')}, function() {
     var value = config.get('server:url');
     console.log("Value is", value);
 
+    console.log(config.get('server'));
+
+    console.log(config.get('server:hosts'));
+
     server.connection({
         port: config.get('server:port'),
         router: {

@@ -1,4 +1,14 @@
 server:
-  url: $MY_SERVER/hello
+  url:
+    host: $MY_SERVER
+    path: hello
+  hosts:
+    - url:
+        hostname: $MY_SERVER
+        path: hello2
+    - url:
+        hostname: $MY_SERVER2
+        path: hello3
 
 MY_SERVER: http://localhost
+MY_SERVER2: https://127.0.0.1
