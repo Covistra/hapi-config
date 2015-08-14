@@ -1,0 +1,4 @@
+server:
+  url: $MY_SERVER/hello
+
+MY_SERVER: http://localhost

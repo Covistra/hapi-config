@@ -4,7 +4,10 @@ var server = new Hapi.Server();
 
 server.register({register: require('./')}, function() {
 
-    var config = server.plugins['config'].CurrentConfiguration;
+    var config = server.plugins['hapi-config'].CurrentConfiguration;
+
+    var value = config.get('server:url');
+    console.log("Value is", value);
 
     server.connection({
         port: config.get('server:port'),
