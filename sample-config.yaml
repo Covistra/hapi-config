@@ -1,0 +1,48 @@
+server:
+  info:
+    app_title: CMBF Sample Server
+    app_name: cmbf_sample_server
+
+plugins:
+  system:
+    root_log:
+      name: sample-server-system-log
+      level: trace
+  mongodb:
+    db-seeding:
+      force:
+        MAIN: true
+        ARCHIVE: false
+    dbs:
+      - name: MAIN
+        uri: mongodb://$MONGODB_HOST:27017/cmbf_main
+      - name: ARCHIVE
+        uri: mongodb://$MONGODB_HOST:27017/cmbf_archive
+  admin:
+    seed-data:
+      MAIN:
+        applications:
+          - key: b4423a98460c03213d7ad86033622f5066a44b69
+            name: CMBF Admin Console
+  security:
+    seed-data:
+      MAIN:
+        groups:
+          - name: admin
+          - name: user
+          - name: superuser
+        users:
+          - username: admin
+            password: "js:{encryptPassword('$DEFAULT_ADMIN_PASSWORD')}"
+            groups:
+              - admin
+              - user
+              - superuser
+
+# These can be overriden by ENV variables to easily adapt to various execution environments
+MONGODB_HOST: localhost
+PORT: 3000
+ADMIN_PORT: 3001
+
+# Override this using an ENV variable when launching the server for the first time
+DEFAULT_ADMIN_PASSWORD: cmbf2015
