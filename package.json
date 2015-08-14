@@ -1,6 +1,6 @@
 {
   "name": "hapi-config",
-  "version": "0.0.8-pre",
+  "version": "0.0.8",
   "description": "hapi-config is a plugin for Hapi that manages configuration files, integrated with environment variables and command-line arguments",
   "keywords": "hapi,plugin,config,environment,variable,command,line,yaml",
   "author": "joel Grenon <joel@pagmemesh.com>",
