@@ -108,3 +108,30 @@ variable when running in production. The configuration system will merge everyth
     node sample.js --MONGOLAB_URL=mongodb://localhost/my-db
    
        
+## Recursive Replacement
+
+While this is interesting to mix environment variables with configuration and command line arguments, it's even better to be able to
+use environment variables inside your configuration entries. This way, you can make change at a single place when deploying your server (or Docker image)
+and get the right value everywhere.
+
+    database:
+        uri: $MONGOLAB_URL
+    MONGOLAB_URL=mongodb://localhost/my-db
+
+In this example, the $MONGOLAB_URL will be replace by ```mongodb://localhost/my-db```.
+
+You can use variable replacement inside string, object fields (recursively) and array.
+
+    hosts:
+        - host1:
+            url:
+                host: $MY_HOST
+                path: my_path1
+        - host2:
+            url:
+                host: $MY_HOST2
+                path: my_path2
+    MY_HOST: localhost
+    MY_HOST2: 127.0.0.1
+
+All object in this array configuration will get the right value.
