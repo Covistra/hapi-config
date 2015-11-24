@@ -4,11 +4,11 @@
   "description": "hapi-config is a plugin for Hapi that manages configuration files, integrated with environment variables and command-line arguments",
   "keywords": "hapi,plugin,config,environment,variable,command,line,yaml",
   "author": "joel Grenon <joel@pagmemesh.com>",
-  "homepage": "https://github.com/Pagemesh/hapi-config",
+  "homepage": "https://github.com/Covistra/hapi-config",
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pagemesh/hapi-config.git"
+    "url": "https://github.com/Covistra/hapi-config.git"
   },
   "dependencies": {
     "js-yaml": "^3.2.7",
