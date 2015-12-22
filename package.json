@@ -16,6 +16,7 @@
     "nconf": "^0.7.1"
   },
   "devDependencies": {
+    "chai": "^3.4.1",
     "hapi": "^8.2.0"
   }
 }

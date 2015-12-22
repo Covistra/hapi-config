@@ -135,3 +135,32 @@ You can use variable replacement inside string, object fields (recursively) and 
     MY_HOST2: 127.0.0.1
 
 All object in this array configuration will get the right value.
+
+## Loading arbitrary config files
+
+If, as part of your server implementation, you need to load arbitrary config files, starting with
+version 0.1.6, you can use the exposed loadConfig method, specifying the relative path of the file you
+want to load:
+
+```
+var cfg = server.plugins['hapi-config'].loadConfig('./my-wonderful-cfg.json');
+```
+or
+```
+var cfg = server.plugins['hapi-config'].loadConfig('./my-wonderful-cfg.yaml');
+```
+
+This will produce a valid config object, with all replacement logic applied.
+
+## Wrapping an object as a config
+
+Sometimes, you want to provide only a subset of the configuration to your plugin. This is
+achieved using the following approach:
+
+```
+var cfg = server.plugins['hapi-config'].CurrentConfiguration;
+var pluginCfg = server.plugins['hapi-config'].wrapAsConfig(cfg.get('plugin1'));
+```
+
+The resulting ```pluginCfg``` object is a nconf object, with all placeholder replacements
+performed.
