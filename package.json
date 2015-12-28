@@ -11,12 +11,12 @@
     "url": "https://github.com/Covistra/hapi-config.git"
   },
   "dependencies": {
-    "js-yaml": "^3.2.7",
-    "lodash": "^3.3.1",
-    "nconf": "^0.7.1"
+    "js-yaml": "^3.4.6",
+    "lodash": "^3.10.1",
+    "nconf": "^0.8.2"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "hapi": "^8.2.0"
+    "hapi": "^11.1.4"
   }
 }
