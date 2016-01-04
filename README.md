@@ -1,5 +1,9 @@
 # HAPI configuration plugin
- 
+
+[![bitHound Overall Score](https://www.bithound.io/github/Covistra/hapi-config/badges/score.svg)](https://www.bithound.io/github/Covistra/hapi-config)
+[![bitHound Code](https://www.bithound.io/github/Covistra/hapi-config/badges/code.svg)](https://www.bithound.io/github/Covistra/hapi-config)
+[![bitHound Dependencies](https://www.bithound.io/github/Covistra/hapi-config/badges/dependencies.svg)](https://www.bithound.io/github/Covistra/hapi-config/master/dependencies/npm)
+
 This plugin provides a consistent interface to access a unified configuration instance from any anywhere in the system. By using
 [nconf](https://www.npmjs.com/package/nconf), we're able to unify a server environment variables, command line arguments as well
 as the content of configuration files, in JSON or YAML. 
