@@ -27,16 +27,16 @@ Then, you integrate the plugin in your HAPI server:
         routes: {cors: true}
     });
     
-    server.register({register: require('./')}, function(err){});
+    server.register({register: require('hapi-config')}, function(err){});
     server.start();
 
 You might want to load this plugin early in your initialization process to benefit from dynamic configuration for your connection. 
 
     var Hapi = require('hapi');
     var server = new Hapi.Server();
-    server.register({register: require('./')}, function() {
+    server.register({register: require('hapi-config')}, function() {
     
-        var config = server.plugins['config'].CurrentConfiguration;
+        var config = server.plugins['hapi-config'].CurrentConfiguration;
     
         server.connection({
             port: config.get('server:port'),
@@ -59,7 +59,7 @@ You can access the configuration instance using either
     
 or 
 
-    var config = server.plugins['config'].CurrentConfiguration;
+    var config = server.plugins['hapi-config'].CurrentConfiguration;
     
 Both approach return the same object (for now). This might be different in future versions though. The prefered way, like
 everywhere in Hapi, is to use the server instance to retrieve dependencies. 
